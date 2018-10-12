@@ -16,6 +16,14 @@ public class SchemaValidator {
 */
 
         Schema schema = SchemaLoader.load(getSchemaJson());
+        String jsonString="{bankInfo:{}}";
+        JSONObject json=null;
+        try {
+            json = new JSONObject(jsonString);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        schema.validate(json);
 
     }
 
