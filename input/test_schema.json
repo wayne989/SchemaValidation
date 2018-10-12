@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Simple Form Request",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "bankInfo": {
+      "$ref": "#/definitions/BankingInfo"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "BankingInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "accountHolderName": {
+          "type": "string"
+        },
+        "institution": {
+          "type": "string",
+          "enum": [
+            "TD",
+            "RBC",
+            "BMO",
+            "SCOTIA",
+            "CIBC"
+          ]
+        },
+        "transitNumber": {
+          "type": "integer"
+        },
+        "accountNumber": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
