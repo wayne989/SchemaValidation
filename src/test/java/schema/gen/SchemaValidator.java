@@ -8,14 +8,14 @@ import org.junit.Test;
 public class SchemaValidator {
     @Test
     public void validateWithSchema(){
-
+/*
         SchemaLoader loader = SchemaLoader.builder()
                 .schemaJson(getSchemaJson())
                 .build();
         Schema schema = loader.load().build();
+*/
 
-
-//        Schema schema = SchemaLoader.load(getSchemaJson());
+        Schema schema = SchemaLoader.load(getSchemaJson());
 
     }
 
@@ -28,6 +28,7 @@ public class SchemaValidator {
         }catch (Exception e){
             e.printStackTrace();
         }
+
         return json;
     }
 }
