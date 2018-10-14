@@ -4,18 +4,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SimpleFormRequest {
     @JsonProperty("bankInfo")
-    BankingInfo bankingInfo;
+    BankingInfo bankInfo;
     @JsonProperty("email")
     String email;
     @JsonProperty("phone")
-    String phoneNumber;
+    String phone;
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -26,12 +26,12 @@ public class SimpleFormRequest {
         this.email = email;
     }
 
-    public BankingInfo getBankingInfo() {
-        return bankingInfo;
+    public BankingInfo getBankInfo() {
+        return bankInfo;
     }
 
-    public void setBankingInfo(BankingInfo bankingInfo) {
-        this.bankingInfo = bankingInfo;
+    public void setBankInfo(BankingInfo bankInfo) {
+        this.bankInfo = bankInfo;
     }
 
 }

@@ -1,9 +1,5 @@
 package com.simpleform.config;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kjetland.jackson.jsonSchema.JsonSchemaGenerator;
-import com.simpleform.domain.model.SimpleFormRequest;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -22,7 +18,12 @@ public class AppConfig {
     @Bean
     @Scope(value=ConfigurableBeanFactory.SCOPE_SINGLETON)
     Schema getSchema(){
-        Schema schema = SchemaLoader.load(getSchemaJson());
+  //      Schema schema = SchemaLoader.load(getSchemaJson());
+        SchemaLoader loader = SchemaLoader.builder()
+                .schemaJson(getSchemaJson())
+                .draftV7Support()
+                .build();
+        Schema schema = loader.load().build();
         return schema;
     }
 
