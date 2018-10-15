@@ -16,7 +16,8 @@ public class SchemaValidator {
 */
 
         Schema schema = SchemaLoader.load(getSchemaJson());
-        String jsonString="{bankInfo:{}}";
+        String jsonString="{bankInfo:{\"accountHolderName\":\"Way L\", \"institution\":\"TD\", \"transitNumber\":101, \"accountNumber\":123456789},\"email\":\"way@hotmail.com\", \"phone\":\"416-336-6689\"}";
+
         JSONObject json=null;
         try {
             json = new JSONObject(jsonString);
